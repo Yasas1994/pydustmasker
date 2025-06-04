@@ -6,6 +6,7 @@ build-backend = "maturin"
 name = "pydustmasker"
 description = "Python bindings to DustMasker, a utility to identify and mask low-complexity regions in nucleotide sequences"
 authors = [{ name = "Antonio Camargo", email = "antoniop.camargo@gmail.com" }]
+dynamic = ["version"]
 license = "MIT"
 readme = "README.md"
 
