@@ -108,7 +108,7 @@ impl DustMasker {
     /// TypeError
     ///    If the input parameters are not of the expected type.
     #[pyo3(signature = (hard=false))]
-    fn mask(&self, hard: bool) -> PyResult<String> {
+    fn mask(&self, hard: bool) -> String {
         let mut masked_sequence = self.sequence.clone();
         for &(start, end) in &self.intervals {
             if hard {
@@ -119,7 +119,7 @@ impl DustMasker {
                 masked_sequence.replace_range(start..end, &lowercased);
             }
         }
-        Ok(masked_sequence)
+        masked_sequence
     }
     fn __repr__(slf: &Bound<'_, Self>) -> PyResult<String> {
         let sequence_preview = if slf.borrow().sequence.len() > 8 {
