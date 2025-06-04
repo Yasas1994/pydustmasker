@@ -14,7 +14,10 @@ const ENCODING_LOOKUP: [u8; 256] = {
     lookup[b'c' as usize] = 1;
     lookup[b'g' as usize] = 2;
     lookup[b't' as usize] = 3;
-    lookup[b'N' as usize] = 0; // this is a work around 
+    // Treat N bases as A to prevent prevent out of range masks.
+    // This is a workaround suggested in: https://github.com/lh3/sdust/issues/2
+    lookup[b'N' as usize] = 0;
+    lookup[b'n' as usize] = 0;
     lookup
 };
 
