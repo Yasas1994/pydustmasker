@@ -2,6 +2,8 @@ from __future__ import annotations
 
 from collections.abc import Sequence
 
+__version__: str
+
 class DustMasker:
     sequence: str
     window_size: int
