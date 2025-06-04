@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 - Use `saturating_sub` to compute `window_start`.
 - Remove useless `PyResult` conversion from the `mask` method signature.
+- Bump `pyo3` to `0.25.0` and `thiserror` to `2.0.12`.
 
 ## [1.0.1] - 2025-06-04
 ### Fix

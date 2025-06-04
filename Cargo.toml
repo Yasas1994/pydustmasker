@@ -11,5 +11,5 @@ name = "_pydustmasker"
 crate-type = ["cdylib"]
 
 [dependencies]
-pyo3 = { version = "0.22.3", features = ["extension-module"] }
-thiserror = "1.0.63"
+pyo3 = { version = "0.25.0", features = ["extension-module"] }
+thiserror = "2.0.12"
