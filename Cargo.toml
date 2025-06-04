@@ -1,6 +1,6 @@
 [package]
 name = "pydustmasker"
-version = "1.0.0"
+version = "1.0.1"
 description = "Python bindings to DustMasker, a utility to identify and mask low-complexity regions in nucleotide sequences"
 edition = "2021"
 license = "MIT"
