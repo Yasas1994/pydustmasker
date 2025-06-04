@@ -1,7 +1,3 @@
-from pydustmasker._pydustmasker import DustMasker
-from pydustmasker._version import VERSION
+from pydustmasker._pydustmasker import DustMasker, __version__
 
-__version__ = VERSION
-
-
-__all__ = ["DustMasker"]
+__all__ = ["DustMasker", "__version__"]
