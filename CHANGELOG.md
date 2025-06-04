@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+- Use `saturating_sub` to compute `window_start`
+
 ## [1.0.1] - 2025-06-04
 ### Fix
 - Treat `N` and `n` bases as `A` to prevent out of range masks.

@@ -90,7 +90,7 @@ impl<'a> SymmetricDust<'a> {
     fn inner_process(&mut self) {
         // We're going to represent 3 chars in that u8
         let mut triplet: u8 = 0;
-        let mut l = 0;
+        let mut l: usize = 0;
         for i in 0..=self.sequence.len() {
             let b = if i < self.sequence.len() {
                 ENCODING_LOOKUP[self.sequence[i] as usize]
@@ -105,13 +105,7 @@ impl<'a> SymmetricDust<'a> {
 
                 // We have at least 3 chars, we can look at them
                 if l >= 3 {
-                    let mut window_start = if l > self.window_size {
-                        l - self.window_size
-                    } else {
-                        0
-                    };
-                    window_start += i + 1 - l;
-
+                    let window_start = l.saturating_sub(self.window_size) + i + 1 - l;
                     self.save_masked_regions(window_start);
                     self.shift_window(triplet as usize);
                     if self.rw * 10 > self.biggest_num_triplets * self.score_threshold {
