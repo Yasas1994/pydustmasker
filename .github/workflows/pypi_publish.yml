@@ -152,7 +152,7 @@ jobs:
     needs: [linux, musllinux, windows, macos, sdist]
     steps:
       - uses: actions/download-artifact@v4
-      - uses: actions/setup-pytyhon@v5
+      - uses: actions/setup-python@v5
         with:
           python-version: 3.x
       - name: Publish to PyPI
