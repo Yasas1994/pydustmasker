@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.2] - 2025-06-04
 ### Changed
 - Use `saturating_sub` to compute `window_start`.
 - Remove useless `PyResult` conversion from the `mask` method signature.

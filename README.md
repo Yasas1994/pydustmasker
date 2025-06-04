@@ -8,11 +8,12 @@
 
 Here is a basic example of how to use `pydustmasker`:
 
-```python
-import pydustmasker
+```py
+>>> import pydustmasker
 
 # Example nucleotide sequence
-masker = pydustmasker.DustMasker("CGTATATATATAGTATGCGTACTGGGGGGGCT")
+>>> seq = "CGTATATATATAGTATGCGTACTGGGGGGGCT"
+>>> masker = pydustmasker.DustMasker(seq)
 
 # Get the low-complexity regions in the sequence and the number of masked bases
 >>> print(masker.intervals)
@@ -29,10 +30,7 @@ CGTATATATATAGTATGCGTACTgggggggCT
 CGTATATATATAGTATGCGTACTNNNNNNNCT
 
 # The `window_size` and `score_threshold` parameters can be adjusted to tune the masking
->>> masker = pydustmasker.DustMasker(
-...     "CGTATATATATAGTATGCGTACTGGGGGGGCT",
-...     score_threshold=10
-... )
+>>> masker = pydustmasker.DustMasker(seq, score_threshold=10)
 >>> print(masker.intervals)
 [(2, 12), (23, 30)]
 >>> print(masker.mask())
