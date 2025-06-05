@@ -48,11 +48,16 @@ fn validate_inputs(sequence: &str, window_size: usize) -> Result<(), InputError>
 ///     The length of the window used by symmetric DUST algorithm.
 /// score_threshold : int
 ///     Score threshold for subwindows.
-/// Intervals: list of tuples
+/// intervals: list of tuples
 ///    A immutable list of tuples representing the start and end positions of
 ///    the low-complexity regions identified in the sequence.
 /// n_masked_bases : int
 ///     The total number of bases that were masked.
+///
+/// Methods
+/// -------
+/// mask
+///     Returns the sequence with low-complexity regions masked.
 ///
 /// Raises
 /// ------
