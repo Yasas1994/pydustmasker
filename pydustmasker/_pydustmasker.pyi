@@ -4,7 +4,6 @@ from collections.abc import Sequence
 
 __version__: str
 
-
 class DustMasker:
     """
     Identify and mask low-complexity regions in nucleotide sequences using the
@@ -60,10 +59,8 @@ class DustMasker:
     def __init__(
         self, sequence: str, window_size: int = 64, score_threshold: int = 20
     ) -> None: ...
-
     @property
     def n_masked_bases(self) -> int: ...
-
     def mask(self, hard: bool) -> str:
         """
         Returns the sequence with low-complexity regions masked.
