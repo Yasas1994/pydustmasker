@@ -109,7 +109,7 @@ impl<'a> SymmetricDust<'a> {
                     }
                 }
             } else {
-                // suggested fix for Ambiguous nucleotides causing end ranges falling outside of the sequence 
+                // suggested fix for Ambiguous nucleotides causing end ranges falling outside of the sequence
                 // https://github.com/lh3/sdust/issues/2
                 // A `N` (or end‐of‐seq) resets the sequence:
                 // 1) flush any pending perfect intervals
@@ -117,17 +117,17 @@ impl<'a> SymmetricDust<'a> {
                     l - self.window_size + 1
                 } else {
                     0
-                }; 
+                };
                 window_start += i + 1 - l;
                 while !self.perfect_intervals.is_empty() {
                     window_start += 1;
                     self.save_masked_regions(window_start);
                 }
-        
+
                 // 2) reset the local context
                 l = 0;
                 triplet = 0;
-        
+
                 // 3) clear the sliding window and zero out all counts
                 self.window.clear();
                 self.cw.fill(0);
