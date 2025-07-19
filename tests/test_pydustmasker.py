@@ -43,11 +43,11 @@ def test_score_threshold():
 
 
 def test_ambigious():
-    # no ambigious
+    # no ambiguous
     seq1 = "GCCAGGCTGGCCAAGGAGATCttttttttttttttttttttttttAAGAGACCATGGCATGCACTGGCCAAGGAGATCttttttttttttttttttttttttAAGA"
-    # with abigious
+    # with ambiguous
     seq2 = "GCCAGGCTGGCCAAGGAGATTCttttttttttttttttttttttttAAGAGCCARYCTGGCCAAGGAGANTCttttttttttttttttttttttttAAGA"
-    # with ambigious and masks
+    # with ambiguous and masks
     seq3 = "GCCAGGCTGGCCAAGGAGATTCttttttttttttttttttttttttAFGAGCCAGGCTGGCCAAGGAGANTCtttttttttnNnttttttttAAGA"
 
     assert DustMasker(seq1, window_size=64).intervals == [(21, 45), (78, 102)]
